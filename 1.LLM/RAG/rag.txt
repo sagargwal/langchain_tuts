@@ -1,0 +1,10 @@
+RAG - Retrieval-Augmented Generation
+it is technique that combines information Retrieval with language Generation,
+where a model retrieves documents from a knowlegde base and then uses them as context to generate accurate and grounded responses.
+
+RAG has four main components - 
+1. document loaders
+2. Text Splitters 
+3. Vector Databases
+4. Retrievers
+

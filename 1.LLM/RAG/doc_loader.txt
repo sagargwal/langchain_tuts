@@ -1,0 +1,16 @@
+
+Document loader - are components in langchain used to load data from various scources into 
+a standardized format (usually as document object), which can then be used for chunking, embedding, retrival, and Generation.
+
+Document(
+    page_content = "the acutal text content",
+    metadata = {"source","filename"}
+)
+
+4 most commom 
+Text Loader 
+PyPDFloader
+WebBaseLoader
+CSVLoader
+
+
