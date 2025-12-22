@@ -1,0 +1,11 @@
+text spliter is a process of breaking large piece of text into smaller chunks
+that an llm can handle efficiently
+advantage 
+overcoming model limitation 
+many models have input limitation, text spliting allows models to work on text that are more than thier limit by spliting 
+or they have context length limit that needs to be considered this method allows bigger chucnks to split and the input
+
+text spliting improves tasks like 
+emmbeding, simantic search and summerization
+
+optimizing computational resources like we need a certain memory and gpu to process based upon words
