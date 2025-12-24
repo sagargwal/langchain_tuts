@@ -1,0 +1,37 @@
+vector stores
+if the obejctive is to build a system where the work is to give recommendation or search 
+on the bases of context similarity 
+
+for example to build a system where we need to build a movie recommendation system
+but the recommendation should be based upon plot rather then just key words
+
+here the objective should be to first convert the plot into vector of 
+equal dimensions, then in that dimensional space we would need to find the 
+vector closest to the query vector should be given as the recommendation
+
+but thier are some problems here 
+
+thier would be millions of plots and we can not process emmebeding for 
+all plots every time we guve recoomendation so storing it is neccesary 
+
+but the store we store them should have some features 
+
+storage - the store should have options to keep the data in memory or in disk 
+for quick look up and storage 
+
+similarity search - help look for vector for best simiarity score
+
+indexing -  the problem even after storing the data can be can be to calculate 
+nearest distance of angular distance from very vector for each query 
+so the vector database should have algo to find similarity score quickly 
+
+on of the method could to form clusters and make an average vector of a cluster 
+and first calculate distance of query vector with custer average and than with other vectors of that 
+cluster 
+
+CRUD - vector store should give access to perform crud operations create read update delete 
+
+
+vector store vs vector database 
+A vector store is a software component that saves embeddings and lets you perform similarity search, often in-memory or tightly coupled to an application.
+A vector database is a full database system built around vectors, providing persistence, indexing, scaling, filtering, and production-grade reliability.
