@@ -7,7 +7,7 @@ and more, they ensure consistency validation, and ease ofthe use in application'
 
 '''four kinds are the common ones
 1. str output parser
-2. kson outpt paser 
+2. json outpt paser 
 3. structured output parser
 4. pydantic output parser
 and more but these are most common ones'''

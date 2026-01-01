@@ -3,13 +3,13 @@ runnable = A Runnable in LangChain is a standardized, executable unit that takes
 two types 
 1. task specific runnable
 
-these are vore langchain components that have been converted into runnables so they can be used in pipelines 
+these are core langchain components that have been converted into runnables so they can be used in pipelines 
 do task specific operations like llm calls prompting retrival 
 example -  chat openai 
 prmopttemplate = formats prompts dynamically
 retriever - retrieves relevent documents 
 2. runnable primitive
-tese are fundamental  building blocks for structuring execution logic in ai workflows
+these are fundamental  building blocks for structuring execution logic in ai workflows
 help in  interation of differnt runnables
 eg 
 runnable sequence - runs steps in order

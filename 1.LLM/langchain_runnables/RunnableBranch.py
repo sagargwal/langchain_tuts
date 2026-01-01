@@ -1,40 +1,34 @@
-'''
-RunnableBranch - is the control flow component that allows you to conditionally route input data 
-to different chains or runnables based on custom logics 
-
-it is langchain's if/else
-'''
-
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnableSequence, RunnableParallel, RunnableBranch, RunnablePassthrough
 from dotenv import load_dotenv
+from langchain_core.runnables import RunnableSequence, RunnableParallel, RunnablePassthrough, RunnableBranch, RunnableLambda
 
 load_dotenv()
 
-model =ChatOpenAI()
-
 prompt1 = PromptTemplate(
-    template= "generate a linkdin post for the {topic}",
-    input_variables= ["topic"]
+    template='Write a detailed report on {topic}',
+    input_variables=['topic']
 )
 
 prompt2 = PromptTemplate(
-    template= "generate a tweet for the {topic}",
-    input_variables= ["topic"]
+    template='Summarize the following text \n {text}',
+    input_variables=['text']
 )
+
+model = ChatOpenAI()
 
 parser = StrOutputParser()
 
-report_gen_chain = prompt1 | model | parser 
+report_gen_chain = prompt1 | model | parser
 
-branch_gen_chain = RunnableBranch(
-    (lambda x: len(x.split())>300, prompt1 | model | parser),
-    
-     RunnablePassthrough()
+branch_chain = RunnableBranch(
+    (lambda x: len(x.split())>300, prompt2 | model | parser),
+    RunnablePassthrough()
 )
 
-final_chain = RunnableSequence(report_gen_chain, branch_gen_chain)
+final_chain = RunnableSequence(report_gen_chain, branch_chain)
 
-print(final_chain.invoke({"topic": "russian vs ukraine"}))
+print(final_chain.invoke({'topic':'Russia vs Ukraine'}))
+
+

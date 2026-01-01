@@ -15,7 +15,7 @@ from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from typing import TypedDict,Annotated,Literal, Optional
 from pydantic import BaseModel,Field
-load_dotenv()
+load_dotenv(dotenv_path="C:/Users/makerofdreams/Desktop/langchain_models/.env")
 
 model = ChatOpenAI()
 # this is a simple use of typedict 

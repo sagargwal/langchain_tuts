@@ -3,17 +3,19 @@ from langchain_huggingface import ChatHuggingFace,HuggingFaceEndpoint
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
+from langchain_openai import ChatOpenAI
 
 
+load_dotenv(dotenv_path="C:/Users/makerofdreams/Desktop/langchain_models/.env")
 
-load_dotenv()
+# llm = HuggingFaceEndpoint(
+#     repo_id="meta-llama/Llama-3.2-1B-Instruct",
+#     task="text-generation"
+# )
 
-llm = HuggingFaceEndpoint(
-    repo_id="meta-llama/Llama-3.2-1B-Instruct",
-    task="text-generation"
-)
-model = ChatHuggingFace(llm = llm)
+# model = ChatHuggingFace(llm = llm)
 
+model = ChatOpenAI()
 parser = JsonOutputParser()
 
 template = PromptTemplate(
