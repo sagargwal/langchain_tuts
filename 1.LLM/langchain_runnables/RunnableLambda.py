@@ -31,7 +31,7 @@ parellel_chain = RunnableParallel({
 
 final_chain = RunnableSequence(joke_gen_chain,parellel_chain)
 
-result = final_chain.invoke({"topic","AI"})
+result = final_chain.invoke({"topic":"AI"})
 
 print(result)
 
